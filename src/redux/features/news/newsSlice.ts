@@ -40,7 +40,7 @@ function editValue(state:any, action:any) {
             item.title = obj.title;
             item.description = obj.description;
         }
-        return item;
+        return item; 
     });
     localStorage.setItem('news', JSON.stringify(new_array));
     return new_array;
