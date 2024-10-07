@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
-import { Table, Button, Checkbox, Form, Input, Space } from 'antd';
+import { Table, Button,  Form, Input, Space } from 'antd';
 import { useSelector } from 'react-redux';
 import { New } from './interface';
 import { useDispatch } from 'react-redux';
@@ -101,8 +101,8 @@ function App() {
                     <Input placeholder="Описание" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </Form.Item>
                 <Form.Item>
-                {status == 'edit' ?   <Button type="primary" onClick={onEdit}>Редактировать</Button>:   <Button type="primary" onClick={onAdd}>Добавить</Button>}
-                   {status == 'edit' && <a onClick={() => cancelEdit()}>Отменить редактирование</a>}
+                {status === 'edit' ?   <Button type="primary" onClick={onEdit}>Редактировать</Button>:   <Button type="primary" onClick={onAdd}>Добавить</Button>}
+                   {status === 'edit' && <a onClick={() => cancelEdit()}>Отменить редактирование</a>}
                 </Form.Item>
             </Form>
 

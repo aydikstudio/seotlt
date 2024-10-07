@@ -26,7 +26,7 @@ export const { addNewNews, editNews,  deleteNews } = newsSlice.actions
 export default newsSlice.reducer
 
 function deleteValue(state:any, action:any) {
-    let new_array = [...state.value].filter((item) => item.title != action.payload.title);
+    let new_array = [...state.value].filter((item) => item.title !== action.payload.title);
     localStorage.setItem('news', JSON.stringify(new_array));
     return new_array;
 }
@@ -36,7 +36,7 @@ function editValue(state:any, action:any) {
     let obj = action.payload;
     let new_array = [...state.value];
     new_array.map((item) => {
-        if(item.title == obj.oldTitle) {
+        if(item.title === obj.oldTitle) {
             item.title = obj.title;
             item.description = obj.description;
         }
