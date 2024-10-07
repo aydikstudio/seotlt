@@ -27,7 +27,6 @@ function App() {
             title: 'Title',
             dataIndex: 'title',
             key: 'title',
-            render: (text: any) => <a>{text}</a>,
         },
         {
             title: 'Description',
@@ -40,8 +39,8 @@ function App() {
             render: (_: any, record: any) => (
                 <Space size="middle">
                   
-                    <a  onClick={() => startEdit(record)}>Редактировать</a>
-                    <a onClick={() => dispatch(deleteNews(record))}>Удалить</a>
+                    <a href='/#'  onClick={() => startEdit(record)}>Редактировать</a>
+                    <a   href='/#' onClick={() => dispatch(deleteNews(record))}>Удалить</a>
                 </Space>
             ),
         },
@@ -102,7 +101,7 @@ function App() {
                 </Form.Item>
                 <Form.Item>
                 {status === 'edit' ?   <Button type="primary" onClick={onEdit}>Редактировать</Button>:   <Button type="primary" onClick={onAdd}>Добавить</Button>}
-                   {status === 'edit' && <a onClick={() => cancelEdit()}>Отменить редактирование</a>}
+                   {status === 'edit' && <a  href='/#' onClick={() => cancelEdit()}>Отменить редактирование</a>}
                 </Form.Item>
             </Form>
 
